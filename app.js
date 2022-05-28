@@ -1,52 +1,42 @@
-var info = {
 
-    timeOpened: new Date(),
-    timezone: (new Date()).getTimezoneOffset() / 60,
-
-    pageon() { return window.location.pathname },
-    referrer() { return document.referrer },
-    previousSites() { return history.length },
-
-    browserName() { return navigator.appName },
-    browserEngine() { return navigator.product },
-    browserVersion1a() { return navigator.appVersion },
-    browserVersion1b() { return navigator.userAgent },
-    browserLanguage() { return navigator.language },
-    browserOnline() { return navigator.onLine },
-    browserPlatform() { return navigator.platform },
-    javaEnabled() { return navigator.javaEnabled() },
-    dataCookiesEnabled() { return navigator.cookieEnabled },
-    dataCookies1() { return document.cookie },
-    dataCookies2() { return decodeURIComponent(document.cookie.split(";")) },
-    dataStorage() { return localStorage },
-
-    sizeScreenW() { return screen.width },
-    sizeScreenH() { return screen.height },
-    sizeDocW() { return document.width },
-    sizeDocH() { return document.height },
-    sizeInW() { return innerWidth },
-    sizeInH() { return innerHeight },
-    sizeAvailW() { return screen.availWidth },
-    sizeAvailH() { return screen.availHeight },
-    scrColorDepth() { return screen.colorDepth },
-    scrPixelDepth() { return screen.pixelDepth },
-
-
-    latitude() { return position.coords.latitude },
-    longitude() { return position.coords.longitude },
-    accuracy() { return position.coords.accuracy },
-    altitude() { return position.coords.altitude },
-    altitudeAccuracy() { return position.coords.altitudeAccuracy },
-    heading() { return position.coords.heading },
-    speed() { return position.coords.speed },
-    timestamp() { return position.timestamp },
-};
-
-function mappingVariableAndDocumentById(){
+function mappingElementById() {
     document.getElementById("timeOpened").innerHTML = new Date();
     document.getElementById("timezone").innerHTML = (new Date()).getTimezoneOffset() / 60;
     document.getElementById("pageon").innerHTML = window.location.pathname;
-    document.getElementById("referrer").innerHTML =document.referrer;
+
+    document.getElementById("referrer").innerHTML = document.referrer;
+    document.getElementById("dataCookies1").innerHTML = document.cookie;
+    document.getElementById("dataCookies2").innerHTML = decodeURIComponent(document.cookie.split(";"));
+    document.getElementById("sizeDocW").innerHTML = document.width;
+    document.getElementById("sizeDocH").innerHTML = document.height;
+
+    document.getElementById("previousSites").innerHTML = history.length;
+
+    document.getElementById("browserVersion1b").innerHTML = navigator.userAgent;
+    document.getElementById("browserLanguage").innerHTML = navigator.language;
+    document.getElementById("browserOnline").innerHTML = navigator.onLine;
+    document.getElementById("dataCookiesEnabled").innerHTML = navigator.cookieEnabled;
+    document.getElementById("connectionType").innerHTML = navigator.connection.effectiveType;
+    document.getElementById("vendor").innerHTML = navigator.vendor;
+
+    document.getElementById("dataStorage").innerHTML = localStorage.length;
+    document.getElementById("sizeScreenW").innerHTML = screen.width;
+    document.getElementById("sizeScreenH").innerHTML = screen.height;
+    document.getElementById("sizeInW").innerHTML = innerWidth;
+    document.getElementById("sizeInH").innerHTML = innerHeight;
+    document.getElementById("sizeAvailW").innerHTML = screen.availWidth;
+    document.getElementById("sizeAvailH").innerHTML = screen.availHeight;
+    document.getElementById("scrColorDepth").innerHTML = screen.colorDepth;
+    document.getElementById("scrPixelDepth").innerHTML = screen.pixelDepth;
+
+    document.getElementById("latitude").innerHTML = position.coords.latitude;
+    document.getElementById("longitude").innerHTML = position.coords.longitude;
+    document.getElementById("accuracy").innerHTML = position.coords.accuracy;
+    document.getElementById("altitude").innerHTML = position.coords.altitude;
+    document.getElementById("altitudeAccuracy").innerHTML = position.coords.altitudeAccuracy;
+    document.getElementById("heading").innerHTML = position.coords.heading;
+    document.getElementById("speed").innerHTML = position.coords.speed;
+    document.getElementById("timestamp").innerHTML = position.timestamp;
 }
 
 
