@@ -4,30 +4,21 @@
 <head>
     <title>What I know about you</title>
     <script src="app.js"></script>
-
-    <style>
-        table,
-        th,
-        td {
-            border: 1px solid black;
-        }
+    <style> table,th,td {
+        border: 1px solid black; }
     </style>
-
 </head>
+
 <center>
 
     <body>
-
         <h1 id="header"></h1>
         <h2>What I know about you</h2>
 
         <table>
             <tr> <th>timeOpened</th>          <th id="timeOpened"        ></th> </tr>
             <tr> <th>timezone</th>            <th id="timezone"          ></th> </tr>
-            <tr> <th>pageon</th>              <th id="pageon"            ></th> </tr>
-            <tr> <th>referrer</th>            <th id="referrer"          ></th> </tr>                  
-            <tr> <th>dataCookies1</th>        <th id="dataCookies1"      ></th> </tr>                         
-            <tr> <th>dataCookies2</th>        <th id="dataCookies2"      ></th> </tr>                         
+            <tr> <th>pageon</th>              <th id="pageon"            ></th> </tr>                       
             <tr> <th>sizeDocW</th>            <th id="sizeDocW"          ></th> </tr>                     
             <tr> <th>sizeDocH</th>            <th id="sizeDocH"          ></th> </tr>                     
             <tr> <th>previousSites</th>       <th id="previousSites"     ></th> </tr>                           
@@ -45,7 +36,7 @@
             <tr> <th>sizeAvailW</th>          <th id="sizeAvailW"        ></th> </tr>                       
             <tr> <th>sizeAvailH</th>          <th id="sizeAvailH"        ></th> </tr>                       
             <tr> <th>scrColorDepth</th>       <th id="scrColorDepth"     ></th> </tr>                           
-            <tr> <th>scrPixelDepth</th>       <th id="scrPixelDepth"     ></th> </tr>                           
+            <tr> <th>scrPixelDepth</th>       <th id="scrPixelDepth"     ></th> </tr>
             <tr> <th>latitude</th>            <th id="latitude"          ></th> </tr>                     
             <tr> <th>longitude</th>           <th id="longitude"         ></th> </tr>                     
             <tr> <th>accuracy</th>            <th id="accuracy"          ></th> </tr>                                                 
@@ -53,11 +44,14 @@
             <tr> <th>altitudeAccuracy</th>    <th id="altitudeAccuracy"  ></th> </tr>                                 
             <tr> <th>heading</th>             <th id="heading"           ></th> </tr>                   
             <tr> <th>speed</th>               <th id="speed"             ></th> </tr>               
-            <tr> <th>timestamp</th>           <th id="timestamp"         ></th> </tr>     
+            <tr> <th>timestamp</th>           <th id="timestamp"         ></th> </tr>                              
         </table>
+        
+        <p id="err"></p>
 
         <script>
             mappingElementById();
+            getLocation();
         </script>
 
     </body>

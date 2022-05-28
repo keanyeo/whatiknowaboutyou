@@ -1,12 +1,10 @@
 
 function mappingElementById() {
+
     document.getElementById("timeOpened").innerHTML = new Date();
     document.getElementById("timezone").innerHTML = (new Date()).getTimezoneOffset() / 60;
     document.getElementById("pageon").innerHTML = window.location.pathname;
 
-    document.getElementById("referrer").innerHTML = document.referrer;
-    document.getElementById("dataCookies1").innerHTML = document.cookie;
-    document.getElementById("dataCookies2").innerHTML = decodeURIComponent(document.cookie.split(";"));
     document.getElementById("sizeDocW").innerHTML = document.width;
     document.getElementById("sizeDocH").innerHTML = document.height;
 
@@ -28,7 +26,17 @@ function mappingElementById() {
     document.getElementById("sizeAvailH").innerHTML = screen.availHeight;
     document.getElementById("scrColorDepth").innerHTML = screen.colorDepth;
     document.getElementById("scrPixelDepth").innerHTML = screen.pixelDepth;
+}
 
+function getLocation() {
+    try {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } catch {
+        document.getElementById("err").innerHTML = err;
+    }
+}
+
+function showPosition(position) {
     document.getElementById("latitude").innerHTML = position.coords.latitude;
     document.getElementById("longitude").innerHTML = position.coords.longitude;
     document.getElementById("accuracy").innerHTML = position.coords.accuracy;
@@ -38,6 +46,3 @@ function mappingElementById() {
     document.getElementById("speed").innerHTML = position.coords.speed;
     document.getElementById("timestamp").innerHTML = position.timestamp;
 }
-
-
-
